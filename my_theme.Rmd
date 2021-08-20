@@ -1,0 +1,33 @@
+---
+title: "interactive_session"
+author: "Charles Hendrickson"
+date: "8/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## 
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() +
+  theme(plot.background = element_rect(fill = "black"),
+        panel.background = element_rect(fill = "purple"),
+        axis.text.x = element_text(color = "blue"),
+        axis.text.y = element_text(color = "green"),
+        axis.title = element_text(color = "white"))
+
+```
+
+
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() +
+  theme_okay()
+```
+

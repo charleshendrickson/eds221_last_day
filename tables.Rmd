@@ -1,0 +1,47 @@
+---
+title: "tables"
+author: "Charles Hendrickson"
+date: "8/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(kableExtra)
+```
+
+##
+```{r}
+whale_sightings <- tibble::tribble(
+        ~date,     ~site,       ~spp, ~dist_m, ~behavior,
+  "8/12/2014", "channel",  "unknown",    400L,  "breach",
+  "8/13/2014", "channel",     "gray",    200L,   "spout",
+  "8/15/2014",  "harbor",     "gray",     60L,   "spout",
+  "8/16/2014", "channel", "humpback",    300L, "feeding",
+  "8/16/2014", "channel",     "gray",    150L, "feeding"
+  )
+
+```
+
+
+```{r}
+whale_sightings %>% 
+  kable(col.names = c("Date", "Site", "Whale species", "distance (m)", "Behavior")) %>% 
+  kable_paper(full_width = FALSE) %>% 
+  column_spec(1, background = "yellow", color = "red")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
